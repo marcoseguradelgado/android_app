@@ -1,0 +1,45 @@
+$url = "http://192.168.0.109/raspberry/server.php"
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+//
+function onDeviceReady() {
+	$.ajax({
+		url : $url,
+		type : 'GET',
+		data : {
+			macAddress : device.uuid
+		},
+		success : function(data) {
+			if (data['status'] === 200) {
+				$('.phoneRegisterDiv').hide();
+				$('.coWorkerName p em').html(data['data']);
+			} else {
+				$('.coWorkerName').hide();
+				$('.phoneRegisterDiv').show();
+			}
+		},
+		error : function(data) {
+			alert('woops!' + data); // or whatever
+		}
+	});
+}
+
+$(document).ready(
+		function() {
+
+			var today = new Date();
+			$('.timeStamp').html(
+					today.getDate() + '/' + today.getMonth() + '/'
+							+ today.getFullYear() + ' - ' + today.getHours()
+							+ ':' + today.getMinutes());
+
+			$('.phoneIn').click(function() {
+				$(this).parent().parent().find('p').html('Hora registrada');
+			});
+
+			$('.phoneOut').click(function() {
+
+			});
+		});

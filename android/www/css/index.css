@@ -1,0 +1,219 @@
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+	backgroud-color: white;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+/* Portrait layout (default) */
+.indexDiv {
+	display: block;
+	margin: 0 auto;
+	width: 70%;
+	margin-top: 15%;
+}
+
+.indexDiv img {
+	width: 100%
+}
+
+.indexMessage {
+	margin-top: 10%;
+}
+
+.indexMessage div {
+	width: 20%;
+	margin: 0 auto;
+}
+
+.indexMessage img {
+	width: 100%;
+}
+
+span.titleIndex {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 5%;
+	padding: 0 5%;
+	font-size: 18px;
+	color: chocolate;
+}
+
+.app {
+	display: block;
+}
+
+.centerDiv {
+	float: left;
+	position: relative;
+	left: 50%;
+	margin-bottom: 1em;
+}
+
+.centerDiv .centerInDiv {
+	float: left;
+	position: relative;
+	left: -50%;
+}
+
+.centerDiv .centerButton {
+	padding: 1em;
+	background-color: blueviolet;
+	color: white;
+	float: left;
+	text-decoration: none;
+	border-radius: 1em;
+	font-size: 5vw;
+	text-decoration: none;
+}
+
+.app section {
+	margin-top: 15%;
+	overflow: auto;
+}
+
+.app section p {
+	margin: 0;
+	text-align: center;
+	float: left;
+	width: 100%;
+}
+
+.app .phoneRegisterDiv {
+	display: none;
+}
+
+.app .coWorkerName p {
+	font-size: 1.5em;
+}
+
+.app .coWorkerName .timeStamp {
+	font-size: 1.3em;
+}
+
+.app .coWorkerName p em {
+	font-weight: bold;
+	margin-left: 0.3em;
+}
+
+.helpAction {
+	position: absolute;
+	bottom: 1%;
+	right: 3%;
+	font-size: 23px;
+	text-align: center;
+	color: white;
+	background-color: blueviolet;
+	border-radius: 50%;
+	padding: 0.5em 0.8em;
+	font-weight: bold;
+}
+
+.aboutAction {
+	position: absolute;
+	bottom: 1%;
+	left: 3%;
+	font-size: 23px;
+	text-align: center;
+	color: white;
+	background-color: blueviolet;
+	border-radius: 50%;
+	padding: 0.5em 0.9em;
+	font-weight: bold;
+}
+
+.contentDiv {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 15%;
+}
+
+.contentDiv h2 {
+	color: blueviolet;
+	text-align: center;
+}
+
+.contentDiv p {
+	text-align: justify;
+	margin-bottom: 12%;
+	margin-top: 12%;
+}
+
+.contentDiv ul {
+	padding: 0;
+	list-style-position: inside;
+}
+
+.contentDiv li {
+	text-align: justify;
+	margin-bottom: 5%;
+}
+
+.inicioButton {
+	margin-top: 10%;
+}
+
+.errorMessage {
+	color: red;
+	font-size: 15px;
+	display: none;
+	width: 100%;
+	text-align: center;
+}
+
+.successMessage{
+	color: green;
+	font-size: 15px;
+	display: none;
+	width: 100%;
+	text-align: center;
+}
+
+.registerDiv{
+	margin-bottom:5%;
+}
+
+.registerDiv div{
+	width:15%;
+	margin:0 auto;
+	display:none;
+}
+
+.registerDiv div img{
+	width:100%;
+}
+
+input.errorData{
+	border:1px solid red;
+	color:red;
+}
+
+.registerDiv input {
+	width: 94%;
+	font-size: 20px;
+	margin-bottom: 5%;
+	padding: 0.3em;
+}
+
+.disabled {
+	background-color: gray !important;
+}
+
+.app>div{
+	margin-top: 5%;
+	width:20%;
+	margin:0 auto;
+	display:none;
+}
+
+.app>div img{
+	width:100%;
+}
