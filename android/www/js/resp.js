@@ -76,37 +76,40 @@ $(document).ready(
 			});
 			
 			$('.phoneIn').click(function() {
-				$('.app>div').css('display','block');
 				if(!$('.phoneIn').hasClass('disabled')){
-					$.ajax({
-						url : $url,
-						type : 'POST',
-						timeout: 15000,
-						data : {
-							typeFunction : 'registerIn',
-							macAddress : device.uuid
-						},
-						success : function(data) {
-							data = JSON.parse(data);
-							$('.app>div').css('display','none');
-							if (data['status'] === 200) {
+				if (confirm('Esta seguro que quiere registrar la entrada')) {		
+						$('.app>div').css('display','block');
+						$.ajax({
+							url : $url,
+							type : 'POST',
+							timeout: 15000,
+							data : {
+								typeFunction : 'registerIn',
+								macAddress : device.uuid
+							},
+							success : function(data) {
+								data = JSON.parse(data);
+								$('.app>div').css('display','none');
+								if (data['status'] === 200) {
+										$('.phoneIn').addClass('disabled');
+										$('.phoneIn').parent().parent().parent().find('p').html('Entrada registrada - '+data['data']);							
+								} else {
 									$('.phoneIn').addClass('disabled');
-									$('.phoneIn').parent().parent().parent().find('p').html('Entrada registrada - '+data['data']);							
-							} else {
-								$('.phoneIn').addClass('disabled');
-								$('.phoneIn').parent().parent().parent().find('p').html('Evento no disponible');
+									$('.phoneIn').parent().parent().parent().find('p').html('Evento no disponible');
+								}
+							},
+							error : function(data) {
+								window.location = "index.html";;
 							}
-						},
-						error : function(data) {
-							window.location = "index.html";;
-						}
-					});
-				}				
+						});
+					}	
+				} 							
 			});
 
 			$('.phoneOut').click(function() {
-				$('.app>div').css('display','block');
 				if(!$('.phoneOut').hasClass('disabled')){
+					if (confirm('Esta seguro que quiere registrar la salida')) {
+					$('.app>div').css('display','block');
 					$.ajax({
 						url : $url,
 						type : 'POST',
@@ -130,6 +133,7 @@ $(document).ready(
 							window.location = "index.html";;
 						}
 					});
+				  }
 				}
 			});
 			
