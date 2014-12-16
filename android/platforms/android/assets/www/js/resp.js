@@ -1,4 +1,4 @@
-$url = "http://192.168.0.125/raspberry_app/server.php"
+$url = "http://192.168.8.15/raspberry_app/server.php"
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -64,11 +64,32 @@ $(document).ready(
 		function() {	
 			
 			var today = new Date();
-			$('.timeStamp').html(today.getDate() + '/' + today.getMonth() + '/' + today.getFullYear() + ' - ' + today.getHours() + ':' + today.getMinutes());
+			
+			var min = today.getMinutes();
+			var hours = today.getHours();
+			
+			if(min.length === 1)
+				min = '0'+min;
+			
+			if(hours.length === 1)
+				hours = '0'+hours;
+			
+			$('.timeStamp').html(today.getDate() + '/' + today.getMonth() + '/' + today.getFullYear() + ' - ' + hours + ':' + min);
 			
 			setInterval(function(){
 				var today = new Date();
-				$('.timeStamp').html(today.getDate() + '/' + today.getMonth() + '/' + today.getFullYear() + ' - ' + today.getHours() + ':' + today.getMinutes());
+				
+				var min = today.getMinutes();
+				var hours = today.getHours();
+				
+				if(min.length === 1)
+					min = '0'+min;
+				
+				if(hours.length === 1)
+					hours = '0'+hours;
+				
+				$('.timeStamp').html(today.getDate() + '/' + today.getMonth() + '/' + today.getFullYear() + ' - ' + hours + ':' + min);
+				
 			},60000);
 
 			$('.phoneRegister').click(function() {
@@ -108,7 +129,7 @@ $(document).ready(
 
 			$('.phoneOut').click(function() {
 				if(!$('.phoneOut').hasClass('disabled')){
-					if (confirm('Esta seguro que quiere registrar la entrada')) {
+					if (confirm('Esta seguro que quiere registrar la salida')) {
 					$('.app>div').css('display','block');
 					$.ajax({
 						url : $url,
